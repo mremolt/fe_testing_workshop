@@ -5,6 +5,8 @@ module.exports = {
   rootDir: './',
   testPathIgnorePatterns: ['e2e'],
 
+  clearMocks: true,
+
   collectCoverage: true,
   setupFilesAfterEnv: ['./src/test-setup.ts'],
 };

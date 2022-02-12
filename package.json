@@ -43,6 +43,7 @@
     "jest": "^27.5.1",
     "jest-json-schema": "^6.1.0",
     "jest-mock-extended": "^2.0.4",
+    "jest-when": "^3.5.1",
     "typescript": "~4.5.2"
   }
 }

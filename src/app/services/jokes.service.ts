@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Joke } from '../models/joke.interface';
 
 @Injectable({
@@ -19,6 +19,12 @@ export class JokesService {
 
   public getCategories(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.getUrl('categories'));
+  }
+
+  public search(query: string): Observable<Array<Joke>> {
+    return this.http
+      .get<{ result: Array<Joke> }>(this.getUrl(`search?query=${query}`))
+      .pipe(map((data) => data.result));
   }
 
   private getUrl(path: string): string {

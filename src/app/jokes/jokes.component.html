@@ -1,0 +1,14 @@
+<h1>Joke Categories</h1>
+
+<p>Select a category:</p>
+
+<mat-nav-list class="categories">
+  <a
+    mat-list-item
+    class="category"
+    [routerLink]="['/', 'jokes', category]"
+    *ngFor="let category of categories$ | async"
+  >
+    {{ category }}
+  </a>
+</mat-nav-list>

@@ -1,0 +1,15 @@
+<h1>Random joke for category "{{ category }}"</h1>
+
+<div *ngIf="joke$ | async as joke; else noJoke">
+  <p class="joke">{{ joke.value }}</p>
+
+  <button class="reload-button" mat-raised-button (click)="reload()">load new random joke</button>
+</div>
+
+<ng-template #noJoke>
+  <p>No joke loaded.</p>
+</ng-template>
+
+<p>
+  <a [routerLink]="['/jokes']">back</a>
+</p>

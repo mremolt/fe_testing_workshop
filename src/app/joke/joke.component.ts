@@ -20,12 +20,16 @@ export class JokeComponent implements OnInit {
       this.category = params['category'];
 
       if (this.category) {
-        this.joke$ = this.jokesService.getRandomJoke(this.category);
+        this.loadJoke();
       }
     });
   }
 
   public reload(): void {
+    this.loadJoke();
+  }
+
+  private loadJoke(): void {
     this.joke$ = this.jokesService.getRandomJoke(this.category);
   }
 }

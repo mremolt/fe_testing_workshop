@@ -81,4 +81,21 @@ describe('JokesService', () => {
       expect(httpClientMock.get).toHaveBeenCalledWith('https://api.chucknorris.io/jokes/categories');
     });
   });
+
+  describe('search', () => {
+    let result: Array<Joke>;
+
+    beforeEach(async () => {
+      httpClientMock.get.mockReturnValue(of({ result: [jokeMock] }));
+      result = await lastValueFrom(subject.search('fear'));
+    });
+
+    it('should return a list of categories', () => {
+      expect(result).toEqual([jokeMock]);
+    });
+
+    it('should call the API', () => {
+      expect(httpClientMock.get).toHaveBeenCalledWith('https://api.chucknorris.io/jokes/search?query=fear');
+    });
+  });
 });

@@ -35,4 +35,6 @@ test.describe('search page', () => {
       expect.arrayContaining(['Chuck Norris can hammer an nail into the wall with a roundhouse kick'])
     );
   });
+
+  test('searching for a query with no match should render an empty list', async () => {});
 });

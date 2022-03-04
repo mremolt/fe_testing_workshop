@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Jokes API GET categories should return the list of given categories (fragile test) 1`] = `
+exports[`Jokes API GET categories should return the list of given categories (bad, fragile test) 1`] = `
 Array [
   "animal",
   "career",

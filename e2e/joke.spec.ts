@@ -22,6 +22,9 @@ test.describe('joke category page', () => {
   });
 
   test('clicking on the reload button loads a new random joke', async () => {
+    /*
+     * think, why is this test fragile?
+     */
     const joke = await jokePage.joke.textContent();
     expect(joke?.length).toBeGreaterThan(0);
 

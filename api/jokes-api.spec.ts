@@ -35,7 +35,7 @@ describe('Jokes API', () => {
   });
 
   describe('GET categories', () => {
-    it('should return the list of given categories (fragile test)', async () => {
+    it('should return the list of given categories (bad, fragile test)', async () => {
       const response = await client.get('/categories');
       expect(response.data).toMatchSnapshot();
     });
@@ -52,5 +52,10 @@ describe('Jokes API', () => {
       const response = await client.get('/random');
       expect(response.data).toMatchSchema(jokeSchema);
     });
+  });
+
+  describe('search for jokes by query', () => {
+    it('should return a list of jokes containing the query', () => {});
+    it('should return an empty list for a query that is not included', () => {});
   });
 });

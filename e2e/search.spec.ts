@@ -10,7 +10,19 @@ test.describe('search page', () => {
   });
 
   test('page is rendered', () => {
-    expect(searchPage.heading).toHaveText('Search');
+    expect(searchPage.heading).toHaveText('Search for Jokes');
+  });
+
+  test('search is disabled for an invalid search term ', async () => {
+    await searchPage.searchBox.fill('this is far too long of a text');
+
+    expect(searchPage.searchButton).toBeDisabled();
+  });
+
+  test('search is enabled for a valid search term ', async () => {
+    await searchPage.searchBox.fill('pain');
+
+    expect(searchPage.searchButton).toBeEnabled();
   });
 
   test('searching for a query renders the resulting jokes', async () => {

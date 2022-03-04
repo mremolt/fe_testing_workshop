@@ -1,16 +1,18 @@
 <div class="container">
-  <mat-toolbar color="primary">
-    <mat-icon>bug_report</mat-icon>
-    <a mat-button routerLink="/"> {{ title }}</a>
-    <span class="example-spacer"></span>
+  <header>
+    <mat-toolbar color="primary">
+      <mat-icon>bug_report</mat-icon>
+      <a mat-button routerLink="/"> {{ title }}</a>
+      <span class="example-spacer"></span>
 
-    <nav>
-      <a mat-icon-button routerLink="/jokes"><mat-icon>celebration</mat-icon> Jokes</a>
-      <a mat-icon-button routerLink="/search"><mat-icon>celebration</mat-icon> Search</a>
-    </nav>
-  </mat-toolbar>
+      <nav role="navigation">
+        <a mat-icon-button routerLink="/jokes"><mat-icon>celebration</mat-icon> Jokes</a>
+        <a mat-icon-button routerLink="/search"><mat-icon>celebration</mat-icon> Search</a>
+      </nav>
+    </mat-toolbar>
+  </header>
 
-  <div class="content">
+  <main class="content">
     <router-outlet></router-outlet>
-  </div>
+  </main>
 </div>

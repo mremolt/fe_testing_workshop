@@ -1,25 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { mock } from 'jest-mock-extended';
+import { of } from 'rxjs';
+import { JokesService } from '../services/jokes.service';
 
 import { JokeComponent } from './joke.component';
 
 describe('JokeComponent', () => {
-  let component: JokeComponent;
-  let fixture: ComponentFixture<JokeComponent>;
+  const jokesServiceMock = mock<JokesService>();
+  const activatedRouteMock = mock<ActivatedRoute>();
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ JokeComponent ]
-    })
-    .compileComponents();
-  });
+  let subject: JokeComponent;
+
+  activatedRouteMock.params = of({ category: 'science' });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JokeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    subject = new JokeComponent(activatedRouteMock, jokesServiceMock);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(subject).toBeTruthy();
+  });
+
+  describe('ngOnInit', () => {
+    it('should set the given category', () => {
+      subject.ngOnInit();
+
+      expect(subject.category).toBe('science');
+    });
   });
 });

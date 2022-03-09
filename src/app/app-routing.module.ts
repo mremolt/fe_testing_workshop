@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CounterComponent } from './counter/counter.component';
+import { CounterModule } from './counter/counter.module';
 
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
@@ -27,10 +29,14 @@ const routes: Routes = [
     path: 'search',
     component: SearchComponent,
   },
+  {
+    path: 'counter',
+    component: CounterComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HomeModule, JokesModule, JokeModule, SearchModule],
+  imports: [RouterModule.forRoot(routes), HomeModule, JokesModule, JokeModule, SearchModule, CounterModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

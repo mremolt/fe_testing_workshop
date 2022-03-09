@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { mock } from 'jest-mock-extended';
 import { lastValueFrom, of } from 'rxjs';
+import { Joke } from '../models/joke.interface';
 import { JokesService } from '../services/jokes.service';
 
 import { SearchComponent } from './search.component';
@@ -12,7 +13,7 @@ import { SearchComponent } from './search.component';
 describe('SearchComponent', () => {
   const jokesServiceMock = mock<JokesService>();
 
-  const jokesMock = [
+  const jokesMock: Array<Joke> = [
     {
       categories: [],
       created_at: '2020-01-05 13:42:30.480041',

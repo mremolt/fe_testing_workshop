@@ -25,11 +25,11 @@ describe('HomeComponent', () => {
     });
 
     it('should render the greeting', () => {
-      expect(screen.getByText('Welcome to our little Frontend Testing Workshop!')).toBeInTheDocument();
+      expect(screen.getByText('Welcome to our little Frontend Testing Workshoppp!')).toBeInTheDocument();
     });
 
     it('should render the headline', () => {
-      // do this after adding a headline to the page - after fixing the a11y e2e spec
+      expect(screen.getByText('Homepage')).toBeInTheDocument();
     });
   });
 });

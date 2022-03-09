@@ -1,0 +1,9 @@
+[
+  ["", { "actual": 0, "required": 3, "tooSmall": true }],
+  ["fo", { "actual": 2, "required": 3, "tooSmall": true }],
+  ["foo", null],
+  ["foobar", null],
+  ["testtest", null],
+  ["foobarbaz", { "actual": 9, "required": 8, "tooLarge": true }],
+  ["Lorem ipsum dolor sit amet, consetetur sadipscing elitr", { "actual": 55, "required": 8, "tooLarge": true }]
+]

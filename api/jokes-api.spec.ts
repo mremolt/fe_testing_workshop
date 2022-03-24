@@ -55,7 +55,11 @@ describe('Jokes API', () => {
   });
 
   describe('search for jokes by query', () => {
-    it('should return a list of jokes containing the query', () => {});
-    it('should return an empty list for a query that is not included', () => {});
+    it('should return a list of jokes containing the query', () => {
+      // TODO: feel free to add ;)
+    });
+    it('should return an empty list for a query that is not included', () => {
+      // TODO: feel free to add ;)
+    });
   });
 });

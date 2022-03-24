@@ -25,10 +25,10 @@ describe('HomeComponent', () => {
     });
 
     it('should render the greeting', () => {
-      expect(screen.getByText('Welcome to our little Frontend Testing Workshoppp!')).toBeInTheDocument();
+      expect(screen.getByText('Welcome to our little Frontend Testing Workshop!')).toBeInTheDocument();
     });
 
-    it('should render the headline', () => {
+    it.skip('should render the headline', () => {
       expect(screen.getByText('Homepage')).toBeInTheDocument();
     });
   });

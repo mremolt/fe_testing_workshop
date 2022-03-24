@@ -4,12 +4,6 @@ import { validateSearch } from './validators';
 import testValues from './test-values.json';
 
 describe('validateSearch', () => {
-  describe('testing by looping over values, Copyright by Utz ;)', () => {
-    it.each(testValues as Array<[string, unknown]>)('should validate "%s" as %o', (value, expected) => {
-      expect(validateSearch(<FormControl>{ value })).toEqual(expected);
-    });
-  });
-
   describe('testing by copy & paste', () => {
     it('should report invalid for an empty value', () => {
       expect(validateSearch(<FormControl>{ value: '' })).toEqual({ actual: 0, required: 3, tooSmall: true });
@@ -43,6 +37,12 @@ describe('validateSearch', () => {
           tooLarge: true,
         }
       );
+    });
+  });
+
+  describe('testing by looping over values, Copyright by Utz ;)', () => {
+    it.each(testValues as Array<[string, unknown]>)('should validate "%s" as %o', (value, expected) => {
+      expect(validateSearch(<FormControl>{ value })).toEqual(expected);
     });
   });
 });

@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { render, RenderResult, screen } from '@testing-library/angular';
+import { render, screen } from '@testing-library/angular';
 import { mock } from 'jest-mock-extended';
 import { lastValueFrom, of } from 'rxjs';
 
@@ -35,16 +35,12 @@ describe('JokesComponent', () => {
   });
 
   describe('JokesComponent', () => {
-    let subject: RenderResult<JokesComponent>;
-    let component: JokesComponent;
-
     beforeEach(async () => {
-      subject = await render(JokesComponent, {
+      await render(JokesComponent, {
         imports: [ReactiveFormsModule],
         providers: [{ provide: JokesService, useFactory: () => jokesServiceMock }],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],
       });
-      component = subject.fixture.componentInstance;
     });
 
     it('should render', () => {
@@ -58,7 +54,7 @@ describe('JokesComponent', () => {
     });
 
     it('should link to the correct category page', () => {
-      const link = subject.getByText('movies') as HTMLAnchorElement;
+      const link = screen.getByText('movies') as HTMLAnchorElement;
       expect(link.getAttribute('href')).toEqual('/jokes/movies');
     });
   });

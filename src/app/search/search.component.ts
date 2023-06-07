@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { Joke } from '../models/joke.interface';
@@ -13,13 +13,11 @@ import { validateSearch } from '../utils/validators';
 })
 export class SearchComponent {
   public jokes$?: Observable<Array<Joke>>;
-  public form: FormGroup;
+  public form = this.fb.group({
+    query: ['', validateSearch],
+  });
 
-  constructor(private readonly jokesService: JokesService, readonly fb: FormBuilder) {
-    this.form = fb.group({
-      query: ['', validateSearch],
-    });
-  }
+  constructor(private readonly jokesService: JokesService, private readonly fb: UntypedFormBuilder) {}
 
   public search(query: string): void {
     this.jokes$ = this.jokesService.search(query);

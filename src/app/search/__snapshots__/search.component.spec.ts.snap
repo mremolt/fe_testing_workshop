@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchComponent SearchComponent API form should publish form property 1`] = `
-Object {
+{
   "query": "",
 }
 `;
 
 exports[`SearchComponent SearchComponent API search() should fill the jokes$ property 1`] = `
-Array [
-  Object {
-    "categories": Array [],
+[
+  {
+    "categories": [],
     "created_at": "2020-01-05 13:42:30.480041",
     "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
     "id": "Rjq1W2u8S3uYKDMqfIqVlQ",
@@ -17,8 +17,8 @@ Array [
     "url": "https://api.chucknorris.io/jokes/Rjq1W2u8S3uYKDMqfIqVlQ",
     "value": "Chuck Norris once nearly drowned an ocean in a fit of rage.",
   },
-  Object {
-    "categories": Array [],
+  {
+    "categories": [],
     "created_at": "2020-01-05 13:42:28.143137",
     "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
     "id": "wYElYsATTVWzI-3__zGwPw",
@@ -30,7 +30,7 @@ Array [
 `;
 
 exports[`SearchComponent SearchComponent search form should connect the form to the template 1`] = `
-Object {
+{
   "query": "Sylvester",
 }
 `;

@@ -1,6 +1,6 @@
 <h1>Search for Jokes</h1>
 
-<form class="example-form" [formGroup]="form" (submit)="search(form.value.query)">
+<form class="example-form" [formGroup]="form" (submit)="search(form.value.query)" name="form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Search for text content</mat-label>
     <input type="search" matInput placeholder="e.g. pain, kick" formControlName="query" />

@@ -18,10 +18,17 @@
     "importHelpers": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "target": "es2017",
+    "target": "ES2022",
     "module": "es2020",
-    "lib": ["es2020", "dom"],
-    "types": ["jest", "@testing-library/jest-dom"]
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

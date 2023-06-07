@@ -90,33 +90,33 @@ describe('SearchComponent', () => {
     });
 
     describe('search form', () => {
-      it('should connect the form to the template', () => {
+      it('should connect the form to the template', async () => {
         const searchField = screen.getByPlaceholderText('e.g. pain, kick');
 
-        userEvent.type(searchField, 'Sylvester');
-        fireEvent.blur(searchField);
+        await userEvent.type(searchField, 'Sylvester');
+        await fireEvent.blur(searchField);
 
         expect(component.form.value).toMatchSnapshot();
       });
 
-      it('should trigger the search on submit', () => {
+      it('should trigger the search on submit', async () => {
         const searchField = screen.getByPlaceholderText('e.g. pain, kick');
         const searchButton = screen.getByText('Search');
 
-        userEvent.type(searchField, 'kick');
-        fireEvent.blur(searchField);
-        fireEvent.click(searchButton);
+        await userEvent.type(searchField, 'kick');
+        await fireEvent.blur(searchField);
+        await fireEvent.click(searchButton);
 
         expect(jokesServiceMock.search).toHaveBeenCalledWith('kick');
       });
 
-      it('should not trigger the search on submit for an invalid form', () => {
+      it('should not trigger the search on submit for an invalid form', async () => {
         const searchField = screen.getByPlaceholderText('e.g. pain, kick');
         const searchButton = screen.getByText('Search');
 
-        userEvent.type(searchField, 'this is too long');
-        fireEvent.blur(searchField);
-        fireEvent.click(searchButton);
+        await userEvent.type(searchField, 'this is too long');
+        await fireEvent.blur(searchField);
+        await fireEvent.click(searchButton);
 
         expect(jokesServiceMock.search).not.toHaveBeenCalled();
       });
